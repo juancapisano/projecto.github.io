@@ -1,56 +1,50 @@
-<!doctype html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>¿NO APRENDISTE NADA?</title>
-<style>
-  
-  body{
-    background: #041017; color: #7fffd4; font-family: "Courier New", monospace;
-    display:flex; align-items:center; justify-content:center; height:100vh; margin:0;
-  }
-  .box{
-    max-width:900px; padding:32px; border:1px solid #073642; box-shadow:0 0 20px rgba(0,255,200,0.05);
-  }
-  h1{ color:#00ff99; margin:0 0 12px; font-size:36px; }
-  p.lead{ color:#bfffe5; font-size:18px; margin:8px 0 18px; }
-  .ascii{ color:#00ff00; background:#001217; padding:14px; border-radius:6px; font-size:12px; line-height:1.4;}
-  .note{ color:#9bead3; margin-top:18px; font-size:13px; opacity:0.9;}
-  a.btn{
-    display:inline-block; margin-top:14px; padding:10px 14px; color:#001; background:#7fffd4;
-    text-decoration:none; border-radius:6px; font-weight:bold;
-  }
-</style>
-</head>
-<body>
-  <div class="box" role="main">
-    <h1> ¿NO APRENDISTE NADA?</h1>
-    <p class="lead"> no escanees QR que no conoces :) :(</p>
+<!doctype html> <html lang="es"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,initial-scale=1"> <title>QR Challenge | ¿NO APRENDISTE NADA?</title> <style> * { box-sizing: border-box; } :root { --green: #00ff99; --cyan: #7fffd4; --dark: #020b0f; --panel: #06151b; --red: #ff3b5c; --yellow: #ffd166; } body { margin: 0; min-height: 100vh; background: radial-gradient(circle at center, #09232b 0%, #02090d 65%, #000 100%); color: var(--cyan); font-family: "Courier New", monospace; display: flex; justify-content: center; align-items: center; padding: 20px; overflow-x: hidden; } /* Efecto scanlines */ body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: repeating-linear-gradient( to bottom, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 2px, transparent 4px ); z-index: 10; } .box { width: min(900px, 100%); background: rgba(2, 12, 16, 0.94); border: 1px solid #0b5747; box-shadow: 0 0 25px rgba(0,255,153,0.08), inset 0 0 40px rgba(0,255,153,0.02); padding: 35px; position: relative; overflow: hidden; } .box::before { content: "SECURITY TRAINING // QR-CHALLENGE"; position: absolute; top: 10px; right: 15px; font-size: 10px; color: #247c69; } .terminal { color: #4cffb2; font-size: 13px; margin-bottom: 20px; min-height: 22px; } h1 { color: var(--green); margin: 0 0 10px; font-size: clamp(30px, 7vw, 54px); text-shadow: 0 0 12px rgba(0,255,153,.45); animation: glitch 2.5s infinite; } .warning { color: var(--red); border: 1px solid rgba(255,59,92,.45); background: rgba(255,59,92,.06); padding: 12px 15px; margin: 20px 0; font-size: 14px; } .lead { color: #d1fff0; font-size: 18px; line-height: 1.6; } .highlight { color: var(--yellow); font-weight: bold; } .terminal-box { background: #01080b; border: 1px solid #08352c; padding: 18px; margin: 25px 0; font-size: 13px; line-height: 1.8; color: #83ffd1; } .line::before { content: "> "; color: var(--green); } .progress { width: 100%; height: 8px; background: #08201b; margin: 18px 0; overflow: hidden; } .progress-bar { height: 100%; width: 0%; background: var(--green); box-shadow: 0 0 12px var(--green); transition: width .5s ease; } .ascii { color: #00ff88; background: #001217; padding: 15px; border-radius: 6px; font-size: 9px; line-height: 1.15; overflow-x: auto; text-align: center; } .lesson { margin-top: 25px; padding: 20px; border-left: 3px solid var(--green); background: rgba(0,255,153,.045); display: none; } .lesson h2 { margin-top: 0; color: var(--green); font-size: 22px; } .lesson p { line-height: 1.7; color: #c8fbed; } .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; } a.btn, button.btn { border: none; display: inline-block; padding: 13px 18px; color: #00110c; background: var(--cyan); text-decoration: none; border-radius: 5px; font-family: inherit; font-weight: bold; cursor: pointer; transition: .2s; } a.btn:hover, button.btn:hover { transform: translateY(-2px); box-shadow: 0 0 18px rgba(127,255,212,.35); } a.linkedin { background: #0a66c2; color: white; } .footer { margin-top: 25px; font-size: 11px; color: #568f82; text-align: center; } .blink { animation: blink 1s steps(2, start) infinite; } @keyframes blink { 50% { opacity: 0; } } @keyframes glitch { 0%, 90%, 100% { transform: translate(0); } 92% { transform: translate(-2px, 1px); } 94% { transform: translate(2px, -1px); } } @media (max-width: 600px) { .box { padding: 25px 18px; } .ascii { font-size: 6px; } .buttons { flex-direction: column; } a.btn, button.btn { text-align: center; width: 100%; } } </style> </head> <body> <main class="box"> <div class="terminal"> <span id="terminalText"></span><span class="blink">_</span> </div> <h1>¿NO APRENDISTE NADA?</h1> <div class="warning"> ⚠ ACCESO REGISTRADO — QR DESCONOCIDO DETECTADO </div> <p class="lead"> Acabás de escanear un <span class="highlight">código QR que no conocías</span>. <br><br> Exactamente lo que acabamos de decir que <strong>no deberías hacer</strong>. </p> <div class="terminal-box"> <div class="line">Iniciando análisis de comportamiento...</div> <div class="line" id="status">Esperando resultados...</div>
+<div class="progress">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
 
-    <div class="ascii">
-<pre>
-⢀⣴⣶⣿⣿⣷⡶⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⢶⣿⣿⣿⣿⣶⣄⠀⠀
-⠀⢠⡿⠿⠿⠿⢿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⡿⠿⠿⠿⠿⣦⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⣿⡿⠆⠀⠀⠀⠀⠰⣿⣿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⣀⣤⡤⠄⢤⣀⡈⢿⡄⠀⠀⠀⠀⢠⡟⢁⣠⡤⠠⠤⢤⣀⠀⠀⠀⠀
-⠐⢄⣀⣼⢿⣾⣿⣿⣿⣷⣿⣆⠁⡆⠀⠀⢰⠈⢸⣿⣾⣿⣿⣿⣷⡮⣧⣀⡠⠀
-⠰⠛⠉⠙⠛⠶⠶⠏⠷⠛⠋⠁⢠⡇⠀⠀⢸⡄⠈⠛⠛⠿⠹⠿⠶⠚⠋⠉⠛⠆
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡇⠀⠀⢸⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⢻⠇⠀⠀⠘⡟⠳⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠰⣄⡀⠀⠀⣀⣠⡤⠞⠠⠁⠀⢸⠀⠀⠀⠀⡇⠀⠘⠄⠳⢤⣀⣀⠀⠀⣀⣠⠀
-⠀⢻⣏⢻⣯⡉⠀⠀⠀⠀⠀⠒⢎⣓⠶⠶⣞⡱⠒⠀⠀⠀⠀⠀⢉⣽⡟⣹⡟⠀
-⠀⠀⢻⣆⠹⣿⣆⣀⣀⣀⣀⣴⣿⣿⠟⠻⣿⣿⣦⣀⣀⣀⣀⣰⣿⠟⣰⡟⠀⠀
-⠀⠀⠀⠻⣧⡘⠻⠿⠿⠿⠿⣿⣿⣃⣀⣀⣙⣿⣿⠿⠿⠿⠿⠟⢃⣴⠟⠀⠀⠀
-⠀⠀⠀⠀⠙⣮⠐⠤⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠤⠊⡵⠋⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠈⠳⡀⠀⠀⠀⠀⠀⠲⣶⣶⠖⠀⠀⠀⠀⠀⢀⠜⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⢀⣿⣿⡀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡿
-</pre>
-    </div>
+<div id="result"></div>
 
-  </div>
-</body>
-</html>
+</div> <div class="ascii"> <pre> ⢀⣴⣶⣿⣿⣷⡶⢤⡀ ⢀⡤⢶⣿⣿⣿⣿⣶⣄ ⢠⡿⠿⠿⠿⢿⣿⣿⣷⣦⡀ 🚨 QR 🚨 ⠀⠀ NO CONFIAR ⠀⠀ NO ESCANEAR ⠀⠀ VERIFICAR </pre> </div> <section class="lesson" id="lesson">
+<h2>🧠 Plot twist: era una trampa.</h2>
+
+<p>
+  Tranquilo/a. No hackeamos tu teléfono, no robamos tus datos
+  y no instalamos nada.
+</p>
+
+<p>
+  <strong>Pero acabás de demostrar el punto de esta capacitación:</strong>
+  un QR puede parecer inofensivo y llevarte a un sitio que no esperabas.
+</p>
+
+<p>
+  Antes de escanear un QR, preguntate:
+  <br>
+  <span class="highlight">
+    ¿Sé quién lo generó? ¿Sé a dónde me lleva? ¿Tiene sentido escanearlo?
+  </span>
+</p>
+
+<p>
+  🔐 En ciberseguridad, <strong>la curiosidad también necesita MFA.</strong>
+</p>
+
+<div class="buttons">
+
+  <button class="btn" onclick="location.reload()">
+    🔄 Intentarlo otra vez
+  </button>
+
+  <!-- REEMPLAZÁ ESTA URL POR TU LINKEDIN -->
+  <a
+    class="btn linkedin"
+    href="TU_URL_DE_LINKEDIN"
+    target="_blank"
+    rel="noopener noreferrer">
+    💼 Conectemos en LinkedIn
+  </a>
+
+</div>
+
+</section> <div class="footer"> CYBERSECURITY AWARENESS // THINK BEFORE YOU CLICK </div> </main> <script> const terminalText = ">> Conexión establecida... analizando decisión del usuario..."; const terminalElement = document.getElementById("terminalText"); const progressBar = document.getElementById("progressBar"); const status = document.getElementById("status"); const result = document.getElementById("result"); const lesson = document.getElementById("lesson"); let i = 0; function typeText() { if (i < terminalText.length) { terminalElement.textContent += terminalText.charAt(i); i++; setTimeout(typeText, 25); } } typeText(); const steps = [ { progress: 20, text: "Identificando origen del QR..." }, { progress: 45, text: "Analizando nivel de confianza..." }, { progress: 70, text: "Evaluando comportamiento del usuario..." }, { progress: 90, text: "Resultado casi listo..." }, { progress: 100, text: "⚠ Curiosidad detectada. Buen intento." } ]; let step = 0; function runAnalysis() { if (step < steps.length) { progressBar.style.width = steps[step].progress + "%"; status.textContent = steps[step].text; step++; setTimeout(runAnalysis, 900); } else { result.innerHTML = '<span style="color:#ff3b5c;">[ ALERTA ]</span> ' + 'El usuario escaneó un QR sin verificar su procedencia.'; setTimeout(() => { lesson.style.display = "block"; lesson.scrollIntoView({ behavior: "smooth", block: "start" }); }, 700); } } setTimeout(runAnalysis, 1200); </script> </body> </html>
